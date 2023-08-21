@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -87,7 +87,7 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.table(finances);
+//console.table(finances);
 
 // decalre all variables and initailize them
 
@@ -101,8 +101,8 @@ let net = 0;
 let netArray = [ ];
 let netChangeSum = 0;
 
-// let least = 
-// let greatest  =
+let least = [``,9999999999999]
+let greatest  = [``, 0]
 
 //iterate through all the values in the array to separate the strings from the numberss
 
@@ -111,13 +111,49 @@ for(let row = 0; row < finances.length; row++){
 
     if(typeof finances[row][columns] !== `string`){
       total += finances[row][columns]
-      console.log(total);
+      // console.log(total);
+      change = finances[row][columns] - net;
+      net = finances[row][columns];
+      netArray.push(change);
+      //console.log(`total: ${total}`);
+      //console.log(`change: ${change}`);
+      //console.log(`net: ${net}`);
+      //console.log(`netArray: ${netArray}`);
+    
+      // for calculating the greatest profit
+      if(change > greatest[1]){
+        greatest = [finances[row][0], finances[row][1]]
+        //console.log(greatest)
+      }
+
+      // for calculating the least profit
+      if(change < least[1]){
+        least = [finances[row][0], finances[row][1]]
+        //console.log(least)
+      }
+    } 
     }
-
-
   }
-}
 
+  for( let row = 0; row < netArray.length; row++){
+    netChangeSum += netArray[row];
+  }
+  average = Math.round(netChangeSum / (86 - 1));
+  //console.log(average);
+
+  // displaying the result in a tabular format using string literal
+
+  analysis = `
+  Financials Analysis
+  -------------------
+  Total Months: ${monthsTotal}
+  Total: $ ${total}
+  Average Change: ${average}
+  Greatest Increase in Profit: ${greatest[0]}: $${greatest[1]}
+  Greatest decrease in Profit: ${least[0]}: $${least[1]}  
+  `
+
+  console.log(analysis)
   
 
   
