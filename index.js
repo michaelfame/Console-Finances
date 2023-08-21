@@ -86,3 +86,38 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.table(finances);
+
+// decalre all variables and initailize them
+
+let monthsTotal = finances.length;
+console.log(monthsTotal);
+let total = 0;
+let change = 0;
+let average;
+let analysis;
+let net = 0;
+let netArray = [ ];
+let netChangeSum = 0;
+
+// let least = 
+// let greatest  =
+
+//iterate through all the values in the array to separate the strings from the numberss
+
+for(let row = 0; row < finances.length; row++){
+  for(let columns = 0; columns< finances[row].length; columns++){
+
+    if(typeof finances[row][columns] !== `string`){
+      total += finances[row][columns]
+      console.log(total);
+    }
+
+
+  }
+}
+
+  
+
+  
