@@ -1,11 +1,13 @@
 # Using Javascript to calculate the Console-Finances assignment
 
-## Scope of work
 
 ## Github Repo for My Console.finance resolution can be found below:
 https://github.com/michaelfame/Console-Finances
 
+## Github URL used for the deployemnt is found below:
+https://michaelfame.github.io/Console-Finances/
 
+## Scope of work
 To write JavaScript code that analyzes the records to calculate each of the following: 
 
 The total number of months included in the dataset.
