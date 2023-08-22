@@ -1,3 +1,16 @@
+//Psudocoding the Task:= Console-Finances
+// declare all varibales that will be needed to caluculate the total,average,  greatest increase & decrease in profit 
+// iterate over the array using the for statement so as to add up the entries with numbers
+//calculate the total as well as the average using the formular given
+// assume a value higher than all entires, iterate toget the value lowe than the number 9999999999999 to determine the greatest month with profit
+// using the value of 1 we use the least variable to also iterate to get the lowest vaue for the month.
+// dispaly the result using a new variable in a string literal format as advised.
+
+
+
+
+// details of data array provided for the Variable Finances
+
 let finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,8 +100,6 @@ let finances = [
   ['Feb-2017', 671099],
 ];
 
-//console.table(finances);
-
 // decalre all variables and initailize them
 
 let monthsTotal = finances.length;
@@ -100,11 +111,10 @@ let analysis;
 let net = 0;
 let netArray = [ ];
 let netChangeSum = 0;
-
 let least = [``,9999999999999]
 let greatest  = [``, 0]
 
-//iterate through all the values in the array to separate the strings from the numberss
+//iterate through all the values in the array to separate the strings from the numbers
 
 for(let row = 0; row < finances.length; row++){
   for(let columns = 0; columns< finances[row].length; columns++){
@@ -115,11 +125,7 @@ for(let row = 0; row < finances.length; row++){
       change = finances[row][columns] - net;
       net = finances[row][columns];
       netArray.push(change);
-      //console.log(`total: ${total}`);
-      //console.log(`change: ${change}`);
-      //console.log(`net: ${net}`);
-      //console.log(`netArray: ${netArray}`);
-    
+         
       // for calculating the greatest profit
       if(change > greatest[1]){
         greatest = [finances[row][0], finances[row][1]]
